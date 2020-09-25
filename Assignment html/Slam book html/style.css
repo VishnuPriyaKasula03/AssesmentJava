@@ -1,0 +1,11 @@
+body{
+  background-image: url("92GUYO.jpg");
+  background-repeat: repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+  font-family: fantasy;
+  color:background;
+  font-style: italic;
+  text-align: right;
+  font-size:large;
+}
