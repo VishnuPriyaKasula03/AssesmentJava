@@ -12,7 +12,7 @@ public class MainAppli {
 		User obj = daoImpl.readUserById(10);
 		if(obj!=null)
 		{
-			System.out.println("Main user id:"+obj.getUserId());
+			System.out.println("user id:"+obj.getUserId());
 			System.out.println("Main user name:"+obj.getUserName());
 		}
 		else
