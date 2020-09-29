@@ -1,0 +1,244 @@
+QUESTION-1:
+-----------
+
+step 1: Creating database called assignments
+query:create database assignments;
+
+step 2: using created databse
+query: use assignments;
+
+step 3: creating table in database called customer_master
+query: CREATE TABLE customer_master(ACCOUNT_NUMBER VARCHAR(10),CUSTOMER_NUMBER VARCHAR(10),FIRSTNAME VARCHAR(30),LASTNAME VARCHAR(30),ACCOUNT_OPENING_DATE DATE);
+
+step 4:Description of table called customer_name
+query&o/p: CREATE TABLE customer_master(ACCOUNT_NUMBER VARCHAR(10),CUSTOMER_NUMBER VARCHAR(10),FIRSTNAME VARCHAR(30),LASTNAME VARCHAR(30),ACCOUNT_OPENING_DATE DATE);
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> DESC customer_master;
++----------------------+-------------+------+-----+---------+-------+
+| Field                | Type        | Null | Key | Default | Extra |
++----------------------+-------------+------+-----+---------+-------+
+| ACCOUNT_NUMBER       | varchar(10) | YES  |     | NULL    |       |
+| CUSTOMER_NUMBER      | varchar(10) | YES  |     | NULL    |       |
+| FIRSTNAME            | varchar(30) | YES  |     | NULL    |       |
+| LASTNAME             | varchar(30) | YES  |     | NULL    |       |
+| ACCOUNT_OPENING_DATE | date        | YES  |     | NULL    |       |
++----------------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+step 5: Inserting data in table.
+queries:INSERT INTO customer_master(ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE)VALUES("A001","C001","RAMESH","KUMAR",'2006-06-09');
+Query OK, 1 row affected (0.01 sec)
+ INSERT INTO customer_master(ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE)VALUES('A002','C002','BHANU','SHARMA','2004-12-12');
+ INSERT INTO customer_master(ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE)VALUES('A003','C003','SIDDHARTH','VARMA','2004-06-09');
+ INSERT INTO customer_master(ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE)VALUES('A004','C004','DHANUSH','SHETTY','2009-07-13');
+ INSERT INTO customer_master(ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE)VALUES('A005','C005','LAKSHMI','MALHOTRA','2007-04-29');
+ INSERT INTO customer_master(ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE)VALUES('A006','C006','REENA','KAPOOR','2010-12-30');
+ INSERT INTO customer_master(ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE)VALUES('A010','C007','NOOR','SHAIK',NOW());
+ INSERT INTO customer_master(ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE)VALUES('A008','C008','PARUL','GANDHI','2014-11-30');
+ INSERT INTO customer_master(ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE)VALUES('A012','C009','AVINASH','MINHA','2014-11-30');
+ INSERT INTO customer_master(ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE)VALUES('A011','C010','SAKTHI','SINHA','1998-06-30');
+
+step 6:Showing data in the table called customer_name
+query&o/p:
+ SELECT *FROM customer_master;
++----------------+-----------------+-----------+----------+----------------------+
+| ACCOUNT_NUMBER | CUSTOMER_NUMBER | FIRSTNAME | LASTNAME | ACCOUNT_OPENING_DATE |
++----------------+-----------------+-----------+----------+----------------------+
+| A001           | C001            | RAMESH    | KUMAR    | 2006-06-09           |
+| A002           | C002            | BHANU     | SHARMA   | 2012-12-09           |
+| A003           | C003            | SIDDHARTH | VARMA    | 2004-06-09           |
+| A004           | C004            | DHANUSH   | SHETTY   | 2009-07-13           |
+| A005           | C005            | LAKSHMI   | MALHOTRA | 2007-04-29           |
+| A006           | C006            | REENA     | KAPOOR   | 2010-12-30           |
+| A010           | C007            | NOOR      | SHAIK    | 2020-09-25           |
+| A008           | C008            | PARUL     | GANDHI   | 2014-11-30           |
+| A012           | C009            | AVINASH   | MINHA    | 2014-11-30           |
+| A011           | C010            | SAKTHI    | SINHA    | 1998-06-30           |
++----------------+-----------------+-----------+----------+----------------------+
+10 rows in set (0.00 sec)
+
+step 7:sorting the table wrt Account_number
+query&o/p: SELECT * from customer_master ORDER BY ACCOUNT_NUMBER ASC;
++----------------+-----------------+-----------+----------+----------------------+
+| ACCOUNT_NUMBER | CUSTOMER_NUMBER | FIRSTNAME | LASTNAME | ACCOUNT_OPENING_DATE |
++----------------+-----------------+-----------+----------+----------------------+
+| A001           | C001            | RAMESH    | KUMAR    | 2006-06-09           |
+| A002           | C002            | BHANU     | SHARMA   | 2012-12-09           |
+| A003           | C003            | SIDDHARTH | VARMA    | 2004-06-09           |
+| A004           | C004            | DHANUSH   | SHETTY   | 2009-07-13           |
+| A005           | C005            | LAKSHMI   | MALHOTRA | 2007-04-29           |
+| A006           | C006            | REENA     | KAPOOR   | 2010-12-30           |
+| A008           | C008            | PARUL     | GANDHI   | 2014-11-30           |
+| A010           | C007            | NOOR      | SHAIK    | 2020-09-25           |
+| A011           | C010            | SAKTHI    | SINHA    | 1998-06-30           |
+| A012           | C009            | AVINASH   | MINHA    | 2014-11-30           |
++----------------+-----------------+-----------+----------+----------------------+
+10 rows in set (0.00 sec)
+
+step-8: create another table account_master
+query: CREATE TABLE account_master(NUMBER VARCHAR(10),OPENING_BALANCE BIGINT,ACCOUNT_TYPE VARCHAR(10));
+
+step 9:Describing the table called account_master
+query&o/p: DESC account_master;
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| NUMBER          | varchar(10) | YES  |     | NULL    |       |
+| OPENING_BALANCE | int         | YES  |     | NULL    |       |
+| ACCOUNT_TYPE    | varchar(20) | YES  |     | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+step 10:insert values in table account_master
+query:insert into account_master(NUMBER,OPENING_BALANCE,ACCOUNT_TYPE)values('C001',1000,'SAVING');
+      insert into account_master(NUMBER,OPENING_BALANCE,ACCOUNT_TYPE)values('C004',2000,'CHECKING');
+      insert into account_master(NUMBER,OPENING_BALANCE,ACCOUNT_TYPE)values('C011',3500,'BROKERAGE');
+      insert into account_master(NUMBER,OPENING_BALANCE,ACCOUNT_TYPE)values('C007',5000,'SAVING');
+
+step 11:showing the data in table called account_master
+query&o/p: SELECT *FROM account_master;
++--------+-----------------+--------------+
+| NUMBER | OPENING_BALANCE | ACCOUNT_TYPE |
++--------+-----------------+--------------+
+| C001   |            1000 | SAVING       |
+| C004   |            2000 | CHECKING     |
+| C011   |            3500 | BROKERAGE    |
+| C007   |            5000 | SAVING       |
++--------+-----------------+--------------+
+4 rows in set (0.00 sec)
+
+step 12:inner joining(means it prints intersection of the table) the two tabels and arranging the values in ascending order based on account number
+query&o/p:select ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE
+    -> FROM customer_master
+    -> inner join account_master
+    -> on customer_master.CUSTOMER_NUMBER = account_master.NUMBER
+    -> order by ACCOUNT_NUMBER;
++----------------+-----------------+-----------+----------+----------------------+
+| ACCOUNT_NUMBER | CUSTOMER_NUMBER | FIRSTNAME | LASTNAME | ACCOUNT_OPENING_DATE |
++----------------+-----------------+-----------+----------+----------------------+
+| A001           | C001            | RAMESH    | KUMAR    | 2006-06-09           |
+| A004           | C004            | DHANUSH   | SHETTY   | 2009-07-13           |
+| A010           | C007            | NOOR      | SHAIK    | 2020-09-25           |
++----------------+-----------------+-----------+----------+----------------------+
+3 rows in set (0.00 sec)
+
+
+
+QUESTION-2:
+----------
+ step-1:inserting another column in customer_master
+query:alter table customer_master add CUSTOMER_CITY VARCHAR(10) NOT NULL;
+
+step-2:Describing the table called customer_master
+query&o/p:DESC customer_master;
++----------------------+-------------+------+-----+---------+-------+
+| Field                | Type        | Null | Key | Default | Extra |
++----------------------+-------------+------+-----+---------+-------+
+| ACCOUNT_NUMBER       | varchar(10) | YES  |     | NULL    |       |
+| CUSTOMER_NUMBER      | varchar(10) | YES  |     | NULL    |       |
+| FIRSTNAME            | varchar(30) | YES  |     | NULL    |       |
+| LASTNAME             | varchar(30) | YES  |     | NULL    |       |
+| ACCOUNT_OPENING_DATE | date        | YES  |     | NULL    |       |
+| CUSTOMER_CITY        | varchar(10) | NO   |     | NULL    |       |
++----------------------+-------------+------+-----+---------+-------+
+
+step-3:inserting data in tables
+query:INSERT INTO customer_master(ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE,CUSTOMER_CITY)VALUES('A002','C002','BHANU','SHARMA','2004-12-12','CHENNAI');
+      INSERT INTO customer_master(ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE,CUSTOMER_CITY)VALUES("A001","C001","RAMESH","KUMAR",'2006-06-09','MUMBAI');
+      INSERT INTO customer_master(ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE,CUSTOMER_CITY)VALUES('A003','C003','SIDDHARTH','VARMA','2004-06-09','HYDERABAD');
+      INSERT INTO customer_master(ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE,CUSTOMER_CITY)VALUES('A004','C004','DHANUSH','SHETTY','2009-07-13','VIZAG');
+      INSERT INTO customer_master(ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE,CUSTOMER_CITY)VALUES('A005','C005','LAKSHMI','MALHOTRA','2007-04-29','CHENNAI');
+      INSERT INTO customer_master(ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE,CUSTOMER_CITY)VALUES('A006','C006','REENA','KAPOOR','2010-12-30','CHENNAI');
+      INSERT INTO customer_master(ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE,CUSTOMER_CITY)VALUES('A010','C007','NOOR','SHAIK',NOW(),'KOLKATA');
+      INSERT INTO customer_master(ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE,CUSTOMER_CITY)VALUES('A008','C008','PARUL','GANDHI','2014-11-30','CHENNAI');
+      INSERT INTO customer_master(ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE,CUSTOMER_CITY)VALUES('A012','C009','AVINASH','MINHA','2014-11-30','MUMBAI');
+      INSERT INTO customer_master(ACCOUNT_NUMBER,CUSTOMER_NUMBER,FIRSTNAME,LASTNAME,ACCOUNT_OPENING_DATE,CUSTOMER_CITY)VALUES('A011','C010','SAKTHI','SINHA','1998-06-30','CHENNAI');
+
+step-4:displaying the data in the table
+query&o/p:SELECT *FROM customer_master;
++----------------+-----------------+-----------+----------+----------------------+---------------+
+| ACCOUNT_NUMBER | CUSTOMER_NUMBER | FIRSTNAME | LASTNAME | ACCOUNT_OPENING_DATE | CUSTOMER_CITY |
++----------------+-----------------+-----------+----------+----------------------+---------------+
+| A002           | C002            | BHANU     | SHARMA   | 2004-12-12           | CHENNAI       |
+| A001           | C001            | RAMESH    | KUMAR    | 2006-06-09           | MUMBAI        |
+| A003           | C003            | SIDDHARTH | VARMA    | 2004-06-09           | HYDERABAD     |
+| A004           | C004            | DHANUSH   | SHETTY   | 2009-07-13           | VIZAG         |
+| A005           | C005            | LAKSHMI   | MALHOTRA | 2007-04-29           | CHENNAI       |
+| A006           | C006            | REENA     | KAPOOR   | 2010-12-30           | CHENNAI       |
+| A010           | C007            | NOOR      | SHAIK    | 2020-09-25           | KOLKATA       |
+| A008           | C008            | PARUL     | GANDHI   | 2014-11-30           | CHENNAI       |
+| A012           | C009            | AVINASH   | MINHA    | 2014-11-30           | MUMBAI        |
+| A011           | C010            | SAKTHI    | SINHA    | 1998-06-30           | CHENNAI       |
++----------------+-----------------+-----------+----------+----------------------+---------------+
+20 rows in set (0.00 sec)
+
+step-5:counting the number of data which have country chennai.
+query&o/p: SELECT count(CUSTOMER_NUMBER)Cust_Count(in brackets we can give any field name)
+    -> FROM customer_master
+    -> WHERE CUSTOMER_CITY='CHENNAI';
++------------+
+| Cust_Count |
++------------+
+|          5 |
++------------+
+
+
+QUESTION-3
+----------
+
+ANS:select CUSTOMER_NUMBER,FIRSTNAME,ACCOUNT_NUMBER
+    -> from customer_master
+    -> inner join account_master
+    -> on customer_master.CUSTOMER_NUMBER = account_master.NUMBER
+    -> where extract(day from ACCOUNT_OPENING_DATE)>15
+    -> order by CUSTOMER_NUMBER,ACCOUNT_NUMBER;
++-----------------+-----------+----------------+
+| CUSTOMER_NUMBER | FIRSTNAME | ACCOUNT_NUMBER |
++-----------------+-----------+----------------+
+| C007            | NOOR      | A010           |
+| C007            | NOOR      | A010           |
++-----------------+-----------+----------------+
+
+
+QUESTION-4:
+-----------
+ANS:SELECT count(customer_number) Count_Customer
+    -> FROM customer_master
+    -> WHERE customer_number NOT IN (SELECT number FROM account_master)
+    -> ;
++----------------+
+| Count_Customer |
++----------------+
+|             0 |
++----------------+
+1 row in set (0.00 sec)
+
+QUESTION-5:
+----------
+ANS: select FIRSTNAME
+    -> from customer_master inner join account_master
+    -> on customer_master.CUSTOMER_NUMBER = account_master.NUMBER
+    -> group by FIRSTNAME
+    -> having count(ACCOUNT_NUMBER)>'A001' order by FIRSTNAME;
++-----------+
+| FIRSTNAME |
++-----------+
+| DHANUSH   |
+| NOOR      |
+| RAMESH    |
++-----------+
+
+QUESTION-6:
+-----------
+ANS: SELECT count(loan_detailsId.NUMBER_OF_CUSTOMER) Count
+    -> from loan_detailsId
+    -> inner join customer_master
+    -> on customer_master.CUSTOMER_NUMBER = loan_detailsId.NUMBER_OF_CUSTOMER;
++-------+
+| Count |
++-------+
+|     5 |
++-------+
+
+
