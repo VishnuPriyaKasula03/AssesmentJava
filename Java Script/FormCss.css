@@ -1,0 +1,17 @@
+body {  
+	background-color:#F7CAC9;
+	color:black;
+    margin-left: 70px; 
+    font-weight: bold ; 
+    float: left; 
+    clear: left; 
+    width: 100px; 
+    text-align: left; 
+    margin-right: 10px; 
+    font-family:cursive;
+    font-size:14px; 
+} 
+form {                                         
+    margin: 0 auto; 
+    width: 600px; 
+}</style> 

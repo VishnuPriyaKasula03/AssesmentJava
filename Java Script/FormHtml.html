@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Register here</title>
+<script src="JS.js"></script>
+<link rel="stylesheet" href="FormCss.css">
+<script src="myscripts.js"></script>
+</head>
+<body> 
+<h1> REGISTRATION FORM </h1>           
+<form name="RegForm" action="./submit.html" onsubmit="return Register()" method="post">  
+      
+    <p>Name: <input type="text"  name="Name"> </p><br>        
+    <p> Address: <input type="text"  name="Address">  </p><br> 
+    <p>E-mail Address: <input type="text"  name="EMail">  </p><br> 
+     <p>Password: <input type="text"name="Password"> </p><br> 
+    <p>Telephone: <input type="text"name="Telephone"> </p><br>   
+           
+    <p>SELECT YOUR COURSE    
+        <select type="text" value="" name="Subject"> 
+            <option>BTECH</option> 
+            <option>BBA</option> 
+            <option>BCA</option> 
+            <option>B.COM</option>  
+        </select></p><br><br> 
+    <p>Comments:  <textarea cols="55" name="Comment">  </textarea></p> 
+    <p><input type="submit" value="send" name="Submit">      
+        <input type="reset" value="Reset" name="Reset">   
+    </p>          
+</form> 
+</body>
+</html>
