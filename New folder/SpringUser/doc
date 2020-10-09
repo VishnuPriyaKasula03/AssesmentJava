@@ -1,0 +1,48 @@
+MVC:-
+Model----->UI data
+view------>response(output)
+controller------->only one controller---->Servlet,Filter
+
+
+Spring MVC :-
+
+	Spring provided Controller   ---------> servlet --------->DispatcherServlet
+	DD---->Deployment Descriptor--->web.xml
+	
+	
+	<servlet>
+		<servlet-name>Spring</servlet-name>
+	</servlet>
+	
+Front controller
+	Which is the Configuration?---><filename-servlet>.xml
+	ex:<Spring-servlet>.xml
+	
+	<component scan base-package com.controller>
+	<component scan base-package com.model>
+	<component scan base-package com.dao>
+	<component scan base-package com.appexception>
+
+class MyController
+{
+	public String function()
+	{
+		//logic
+		return "Hello";//view page
+	}
+}
+
+InternalViewResolver--->
+		prefix	before	"folder"	view page------>hello.jsp
+		postfix	after	.jsp
+	
+Servlet 
+url pattern:http://localhost:9090/pn/url
+
+
+for this @RequestMapping("/abc") is used in servlet
+
+	
+	
+	
+	

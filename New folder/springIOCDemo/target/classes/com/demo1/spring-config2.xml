@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd"
+>
+<!--default-lazy-init="true" in beans make every bean inside this beans avoid eager loading  -->
+
+<!-- Note: line 22wiring==connection  or u can use auto wire-->
+<bean id="employee" class="com.demo1.Employee" autowire="byName">
+<!-- Constructor injection -->
+<constructor-arg value="22" name="empNo">
+</constructor-arg>
+<constructor-arg value="44" name="last">
+</constructor-arg>
+<constructor-arg value="argument" name="empName">
+</constructor-arg>
+<property name="empName" value="override constructor injection-->from setter injection"></property>
+<property name="add" ref="address"></property>
+</bean>
+ <bean id="address" class="com.demo1.Address" init-method="add" destroy-method="sub">
+ <!-- Setter Injection -->
+ <property name="doorno" value="1000"></property>
+ <property name="city" value="Nellore"></property>
+</bean>
+<bean id="address1" class="com.demo1.Address" >
+ <!-- Setter Injection -->
+ <property name="doorno" value="2222"></property>
+ <property name="city" value="Chennai"></property>
+</bean>
+<bean id="address2" class="com.demo1.Address">
+ <!-- Setter Injection -->
+ <property name="doorno" value="555"></property>
+ <property name="city" value="Bangalore"></property>
+</bean>
+
+
+
+</beans>
