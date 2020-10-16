@@ -1,0 +1,56 @@
+Login
+Step 1: create form login.jsp
+
+ <form action="login" method="post">
+Enter user id <input type="text" name="userId">
+Enter user name <input type="text" name="userName">
+Enter password <input type="password" name="password">
+
+ <input type="submit" value="Login">
+
+ </form>
+
+Note : ui component name and model property/variable must be same
+
+Step 2 : Create model User.java
+
+public class User {
+
+ private int userId;
+private String userName;
+private String password;
+// generate getter and setter method
+
+Step 3 :
+
+
+@Controller
+public class UserController {
+
+ @PostMapping(value="/login")
+public String loginFunction(@ModelAttribute User user , Model model)
+{
+System.out.println(user.getUserName());
+model.addAttribute("key2", user);
+return "usersuccess";
+}
+}
+
+Step 4 : WEB-INF/view/usersuccess.jsp
+
+ ${key2.userName }
+ 
+ model=String==ModelAnd View
+ 
+ 
+ 
+ 
+ Server Side Validation === 
+ 
+ Server Side Validation (Bean)---->Hibernate-validator should be used
+ ---->If validation fails----->error capture on UI------->Custom tags of Spring 
+
+ 
+ 
+ Why Server validation even after having client validation
+ _---->Beacuse client can dissable JS(disabling pop ups) in settings
