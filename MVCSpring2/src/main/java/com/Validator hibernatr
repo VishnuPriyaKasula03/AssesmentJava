@@ -1,0 +1,13 @@
+without hibernate validator replace this :
+<!--  
+<form action="login" method="post">
+Enter user id  <input type="text" name="userId">
+Enter user name<input type`="text" name="userName">
+Enter password <input type="password" name="password">
+			   <input type="submit" value="Login">
+</form>
+-->
+
+
+Steps
+
