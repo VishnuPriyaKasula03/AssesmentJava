@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	function validate()
+	{
+		var userName=document.getElementById("t1").value;
+		var pwd=document.getElementById("p1").value;
+		if(userName =="happy" && pwd="secret")
+			{
+				console.log("Congratulations");
+			}
+		else
+			{
+				alert("check credentials");
+			}
+		
+	}
+</script>
+</head>
+<body>
+<form action="http://www.google.com" method="get"`>
+	Enter username:<input text="text" id=t1 name="username"><br>
+	Enter password:<input text="password" id=p1 name="password"><br>
+	<input type="submit"  onclick="validate()" value ="Click here">
+	
+	
+</form>
+
+</body>
+</html>

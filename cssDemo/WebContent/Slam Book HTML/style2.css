@@ -1,0 +1,11 @@
+body{
+  background-image: url("Wallpaper-HD-minions-2015.jpg");
+  background-repeat: repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+  font-family: fantasy;
+  color:highlighttext;
+  font-style: italic;
+  text-align: left;
+  font-size:large;
+}

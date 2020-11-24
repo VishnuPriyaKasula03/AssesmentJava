@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+	function one() 
+	{
+		function user(name,age)
+		{
+			this.name=name;
+			this.age=age;
+		}
+		u=new user("Vishnu Priya",20)
+		alert("Name:"+u.name+"\n"+"Age:"+u.age);
+		return u;
+	}
+	</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	document.write(one().name);
+	</script>
+</body>
+</html>
